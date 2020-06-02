@@ -1,0 +1,29 @@
+{
+  "name": "mylib",
+  "version": "1.0.0",
+  "description": "Full Stack Library App with Node.js, Express & MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MKen212/mylib.git"
+  },
+  "author": "MKen212",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MKen212/mylib/issues"
+  },
+  "homepage": "https://github.com/MKen212/mylib#readme",
+  "dependencies": {
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
