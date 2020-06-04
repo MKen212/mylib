@@ -1,14 +1,13 @@
 // Index of all the routes (controllers) for the app
 
-// Set-up Express Router
+// Initialise Express Router
 const express = require("express");
 const router = express.Router();
 
 
-// Default Route
+// Default Get Route - Display Index
 router.get("/", function (req, res) {
-  res.render("main");
-
+  res.render("index");
 });
 
 // Export this file to the router variable
