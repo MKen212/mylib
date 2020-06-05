@@ -1,1 +1,8 @@
-New Middle Page - Will display MAIN INDEX
+<!-- Main Home Page -->
+<!-- Show Recently Added Books -->
+<h2>Recently Added Books</h2>
+<div>
+  <% books.forEach(book => { %>
+    <img src="<%= book.imagePath %>" height="150" width="100" />
+  <% }); %>
+</div>

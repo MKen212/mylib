@@ -15,6 +15,7 @@ const bodyParser = require("body-parser");
 // Set-up Routers for each route
 const indexRouter = require("./routes/index");
 const authorRouter = require("./routes/authors");
+const bookRouter = require("./routes/books");
 
 // Configure Express to use ejs & ejs-layouts
 app.set("view engine", "ejs");
@@ -31,6 +32,7 @@ app.use(express.static("./public"));
 // Use the Routers to serve the routes
 app.use("/", indexRouter);
 app.use("/authors", authorRouter);
+app.use("/books", bookRouter);
 
 
 // Set-up Mongoose Connection for MongoDB

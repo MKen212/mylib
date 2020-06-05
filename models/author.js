@@ -6,9 +6,9 @@ const mongoose = require("mongoose");
 // Create Author Schema (Table)
 const authorSchema = new mongoose.Schema( {
   name: {
-    type:  String,
-    required: true
-  }
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("Author", authorSchema);
