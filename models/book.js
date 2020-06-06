@@ -3,12 +3,6 @@
 // Initialise Mongoose Connection for MongoDB
 const mongoose = require("mongoose");
 
-// Initialist Path Node Library for File Paths
-const path = require("path");
-
-// Book Image Upload Path
-const bookImagePath = "uploads/bookImages";
-
 // Create Book Schema (Table)
 const bookSchema = new mongoose.Schema( {
   title: {
@@ -30,7 +24,11 @@ const bookSchema = new mongoose.Schema( {
     required: true,
     default: Date.now,
   },
-  imageFilename: {
+  imageData: {
+    type: Buffer,
+    required: true,
+  },
+  imageType: {
     type: String,
     required: true,
   },
@@ -41,11 +39,11 @@ const bookSchema = new mongoose.Schema( {
   },
 });
 
-bookSchema.virtual("imagePath").get(function () {
-  if (this.imageFilename != null) {
-    return path.join("/", bookImagePath, this.imageFilename);
+bookSchema.virtual("image").get(function () {
+  if (this.imageData != null && this.imageType != null) {
+    return `data:${this.imageType};charset=utf-8;base64,${this.imageData.toString("base64")}`;
+    
   }
 });
 
 module.exports = mongoose.model("Book", bookSchema);
-module.exports.bookImagePath = bookImagePath;
