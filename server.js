@@ -8,9 +8,10 @@ const express = require("express");
 const app = express();
 const port  = process.env.MYLIB_EXPPORT || 3000;
 
-// Set-up Express Layouts & Body Parser
+// Set-up Express Layouts, Body Parser & Method-override
 const expressLayouts = require("express-ejs-layouts");
 const bodyParser = require("body-parser");
+const methodOverride = require("method-override");
 
 // Set-up Routers for each route
 const indexRouter = require("./routes/index");
@@ -22,9 +23,10 @@ app.set("view engine", "ejs");
 app.set("views","./views");
 app.set("layout", "layouts/layout");
 
-// Use Express Layouts & Body Parser
+// Use Express Layouts, Body Parser & Method-override
 app.use(expressLayouts);
 app.use(bodyParser.urlencoded( {limit: "10mb", extended: false }));
+app.use(methodOverride("_method"));
 
 // Use Express.static to serve static files from public directory
 app.use(express.static("./public"));

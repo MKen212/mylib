@@ -1,0 +1,12 @@
+<!-- Show Author -->
+<h2><%= author.name %></h2>
+<a href="/authors/<%= author.id %>/edit">Edit</a>
+<%- include("../layouts/deleteForm.ejs", {
+  url: `/authors/${author.id}` }) %>
+<!-- List Books by Author-->
+<% if (booksByAuthor.length > 0) { %>
+  <h2>Books by Author</h2>
+  <% booksByAuthor.forEach(book => { %>
+    <img src="<%= book.image %>" height="150" width="100" />
+  <% }); %>
+<% } %>
