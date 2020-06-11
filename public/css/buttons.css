@@ -1,0 +1,44 @@
+/* CSS Styling for all buttons */
+.btn {
+  border: 1px solid var(--colour-btn-border);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.8rem;
+  font-family: "Gotham Rounded";
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-row {
+  display: flex;
+  align-items: flex-start;
+}
+
+.btn-row > * {
+  margin-left: 1rem;
+}
+
+.btn-row > *:first-child {
+  margin-left: 0;
+}
+
+.btn-primary {
+  color: var(--colour-btn-primary-text);
+  background-color: var(--colour-btn-primary-background);
+}
+
+.btn-primary:hover {
+  color: var(--colour-btn-primary-text-dark);
+  background-color: var(--colour-btn-primary-background-dark);
+}
+
+.btn-danger {
+  color: var(--colour-btn-danger-text);
+  background-color: var(--colour-btn-danger-background);
+}
+
+.btn-danger:hover {
+  color: var(--colour-btn-danger-text-dark);
+  background-color: var(--colour-btn-danger-background-dark);
+}

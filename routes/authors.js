@@ -102,7 +102,7 @@ router.delete("/:id", async function (req, res) {
   try {
     author = await Author.findById(req.params.id);
     await author.remove();
-    res.redirect(`/authors`);
+    res.redirect("/authors");
   } catch (err) {
     if (author == null) {  // author not found
       res.redirect("/");

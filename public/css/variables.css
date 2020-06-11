@@ -1,0 +1,26 @@
+/* Variable Defintions */
+:root {
+  /* Main Colours */
+  --colour-base-hue: 200;
+  --colour-danger-hue-offset: 180;
+  --colour-danger-hue: calc(var(--colour-base-hue) - var(--colour-danger-hue-offset));
+  --colour-background-dark: hsl(var(--colour-base-hue), 100%, 8%);
+  --colour-background-light: hsl(var(--colour-base-hue), 100%, 16%);
+  --colour-text-light: hsl(var(--colour-base-hue), 100%, 87%);
+
+  /* Header Variables */
+  --nav-title-font-size: 3rem;
+  --nav-title-font-weight: bold;
+  --nav-link-font-weight: 300;
+
+  /* Button Variables */
+  --colour-btn-border: black;
+  --colour-btn-primary-text: hsl(var(--colour-base-hue), 100%, 20%);
+  --colour-btn-primary-text-dark: hsl(var(--colour-base-hue), 100%, 10%);
+  --colour-btn-primary-background: hsl(var(--colour-base-hue), 100%, 83%);
+  --colour-btn-primary-background-dark: hsl(var(--colour-base-hue), 100%, 73%);
+  --colour-btn-danger-text: black;
+  --colour-btn-danger-text-dark: black;
+  --colour-btn-danger-background: hsl(var(--colour-danger-hue), 100%, 83%);
+  --colour-btn-danger-background-dark: hsl(var(--colour-danger-hue), 100%, 73%);
+}

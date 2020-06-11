@@ -1,5 +1,5 @@
 <!-- Show Author -->
-<h2><%= author.name %></h2>
+<h2 class="page-header"><%= author.name %></h2>
 <a href="/authors/<%= author.id %>/edit">Edit</a>
 <%- include("../layouts/deleteForm.ejs", {
   url: `/authors/${author.id}` }) %>
