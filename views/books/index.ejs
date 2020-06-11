@@ -22,7 +22,9 @@
 <!-- Display Books -->
 <div>
   <% books.forEach(book => { %>
-    <img src="<%= book.image %>" height="150" width="100" />
+    <a href="/books/<%= book.id %>">
+      <img src="<%= book.image %>" height="150" width="100" />
+    </a>
   <% }); %>
 </div>
 

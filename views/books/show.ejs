@@ -1,0 +1,12 @@
+<!-- Show Book -->
+<h2><%= book.title %></h2>
+<img src="<%= book.image %>" height="150" width="100" />
+<div>Author: <%= book.authorId.name %></div>
+<div>Published Date: <%= book.publishedDate.toDateString() %></div>
+<div>Page Count: <%= book.pageCount %></div>
+<div>Description: <%= book.description %></div>
+
+<a href="/books/<%= book.id %>/edit">Edit</a>
+<%- include("../layouts/deleteForm.ejs", {
+  url: `/books/${book.id}` }) %>
+<a href="/authors/<%= book.authorId.id %>">View Author</a>
