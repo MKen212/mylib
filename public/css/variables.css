@@ -23,4 +23,15 @@
   --colour-btn-danger-text-dark: black;
   --colour-btn-danger-background: hsl(var(--colour-danger-hue), 100%, 83%);
   --colour-btn-danger-background-dark: hsl(var(--colour-danger-hue), 100%, 73%);
+
+  /* Form Variables */
+  --form-label-font-size: 1.2rem;
+  --form-input-border-colour: hsl(var(--colour-base-hue), 100%, 50%);
+  --form-input-border-colour-light: hsl(var(--colour-base-hue), 100%, 80%);
+  --form-input-background-colour: hsl(var(--colour-base-hue), 100%, 31%);
+
+  /* Book Variables */
+  --book-image-width: 175px;
+  --book-image-width-large: 225px;
+  --book-image-aspect-ratio: 0.75;
 }

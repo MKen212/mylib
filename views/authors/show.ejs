@@ -1,14 +1,12 @@
 <!-- Show Author -->
 <h2 class="page-header"><%= author.name %></h2>
-<a href="/authors/<%= author.id %>/edit">Edit</a>
-<%- include("../layouts/deleteForm.ejs", {
-  url: `/authors/${author.id}` }) %>
+<div class="btn-row">
+  <a class="btn btn-primary" href="/authors/<%= author.id %>/edit">Edit</a>
+  <%- include("../layouts/deleteForm.ejs", {
+    url: `/authors/${author.id}` }) %>
+</div>
 <!-- List Books by Author-->
 <% if (booksByAuthor.length > 0) { %>
-  <h2>Books by Author</h2>
-  <% booksByAuthor.forEach(book => { %>
-    <a href="/books/<%= book.id %>">
-      <img src="<%= book.image %>" height="150" width="100" />
-    </a>
-  <% }); %>
+  <h2 class="page-header">Books by Author</h2>
+  <%- include("../layouts/bookList.ejs", { books: booksByAuthor }) %>
 <% } %>

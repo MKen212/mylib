@@ -1,0 +1,59 @@
+/* Specific CSS for Books Pages */
+.book-grid{
+  display: grid;
+  justify-content: center;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, var(--book-image-width));
+}
+
+.book-grid-large{
+  display: grid;
+  justify-content: center;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, var(--book-image-width-large));
+}
+
+.book-image {
+  width: var(--book-image-width);
+  height: calc(var(--book-image-width) / var(--book-image-aspect-ratio));
+}
+
+.book-image-large{
+  width: var(--book-image-width-large);
+  height: calc(var(--book-image-width-large) / var(--book-image-aspect-ratio));
+}
+
+.book-details {
+  display: flex;
+}
+
+.book-details-btn-grid{
+  display: grid;
+  justify-items: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  grid-template-areas:
+    "edit delete"
+    "author author";
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.book-details-btn-author {
+  grid-area: author;
+  justify-self: stretch;
+}
+
+.book-details-grid{
+  display: grid;
+  align-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  grid-template-columns: auto auto;
+}
+
+.book-details-label{
+  font-size: 1.2rem;
+  font-weight: 500;
+  align-self: flex-start;
+}

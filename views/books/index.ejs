@@ -2,30 +2,26 @@
 <!-- Search Books Form -->
 <h2 class="page-header">Search Books</h2>
 <form action="/books" method="GET">
-  <div>
-    <label for="titleSearch">Title: </label>
-    <input type="text" name="title" id="titleSearch" value="<%= searchOptions.title %>" />
+  <div class="form-row">
+    <div class="form-item">
+      <label for="titleSearch">Title:</label>
+      <input type="text" name="title" id="titleSearch" value="<%= searchOptions.title %>" autocomplete="off" />
+    </div>
   </div>
-  <div>
-    <label for="pubAfterSearch">Published After: </label>
-    <input type="date" name="publishedAfter" id="pubAfterSearch" value="<%= searchOptions.publishedAfter %>" />
+  <div class="form-row">
+    <div class="form-item">
+      <label for="pubAfterSearch">Published After:</label>
+      <input type="date" name="publishedAfter" id="pubAfterSearch" value="<%= searchOptions.publishedAfter %>" />
+    </div>
+    <div class="form-item">
+      <label for="pubBeforeSearch">Published Before:</label>
+      <input type="date" name="publishedBefore" id="pubBeforeSearch" value="<%= searchOptions.publishedBefore %>" />
+    </div>
   </div>
-  <div>
-    <label for="pubBeforeSearch">Published Before: </label>
-    <input type="date" name="publishedBefore" id="pubBeforeSearch" value="<%= searchOptions.publishedBefore %>" />
-  </div>
-  <div>
-    <button type="submit">Search</button>
+  <div class="form-row form-row-end">
+    <button class="btn btn-primary" type="submit">Search</button>
   </div> 
 </form>
 <br />
 <!-- Display Books -->
-<div>
-  <% books.forEach(book => { %>
-    <a href="/books/<%= book.id %>">
-      <img src="<%= book.image %>" height="150" width="100" />
-    </a>
-  <% }); %>
-</div>
-
-
+<%- include("../layouts/bookList.ejs", { books: books }) %>

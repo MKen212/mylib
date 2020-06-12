@@ -1,12 +1,23 @@
 <!-- Show Book -->
 <h2 class="page-header"><%= book.title %></h2>
-<img src="<%= book.image %>" height="150" width="100" />
-<div>Author: <%= book.authorId.name %></div>
-<div>Published Date: <%= book.publishedDate.toDateString() %></div>
-<div>Page Count: <%= book.pageCount %></div>
-<div>Description: <%= book.description %></div>
-
-<a href="/books/<%= book.id %>/edit">Edit</a>
-<%- include("../layouts/deleteForm.ejs", {
-  url: `/books/${book.id}` }) %>
-<a href="/authors/<%= book.authorId.id %>">View Author</a>
+<div class="book-details">
+  <div>
+    <img class="book-image" src="<%= book.image %>" />
+    <div class="book-details-btn-grid">
+      <a class="btn btn-primary" href="/books/<%= book.id %>/edit">Edit</a>
+      <%- include("../layouts/deleteForm.ejs", {
+        url: `/books/${book.id}` }) %>
+      <a class="btn btn-primary book-details-btn-author" href="/authors/<%= book.authorId.id %>">View Author</a>    
+    </div>
+  </div>
+  <div class="book-details-grid">
+    <div class="book-details-label">Author:</div>
+    <div><%= book.authorId.name %></div>
+    <div class="book-details-label">Published Date:</div>
+    <div><%= book.publishedDate.toDateString() %></div>
+    <div class="book-details-label">Page Count:</div>
+    <div><%= book.pageCount %></div>
+    <div class="book-details-label">Description:</div>
+    <div><%= book.description %></div>  
+  </div>
+</div>
